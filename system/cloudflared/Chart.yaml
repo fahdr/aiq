@@ -1,0 +1,7 @@
+apiVersion: v2
+name: cloudflared
+version: 0.0.0
+dependencies:
+  - name: cloudflare
+    version: 0.1.1
+    repository: https://cloudflare.github.io/helm-charts

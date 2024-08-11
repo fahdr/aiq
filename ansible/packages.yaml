@@ -1,0 +1,11 @@
+- name: Configure EKS Nodes
+  hosts: eks_nodes
+  become: yes
+  tasks:
+    - name: Install required packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - htop
+        - curl

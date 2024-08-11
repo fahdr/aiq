@@ -1,0 +1,19 @@
+replicaCount: 2
+image:
+  repository: https://github.com/fahdr/aiq.git
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: true
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  hosts:
+    - host: aiq.daysofdevops.com
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
